@@ -1,9 +1,9 @@
 class Solution {
 public:
     vector<int> findMissingElements(vector<int>& nums) {
-        unordered_map<int,int>m;
+        unordered_set<int>s;
         for(int x:nums){
-            m[x]++;
+            s.insert(x);
         }
 
         sort(nums.begin(),nums.end());
@@ -12,7 +12,7 @@ public:
         vector<int>ans;
         
         for(int i=min;i<=max;i++){
-            if(m.find(i)==m.end())
+            if(s.count(i)==0)
             ans.push_back(i);
         }
         return ans;
