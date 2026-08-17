@@ -8,9 +8,10 @@ public:
         int i=0;
         int j=x;
         while(i<=j){
-            if((long long)(i*i)+(j*j)==c) return true;
-            if((long long)(i*i)+(j*j)<c) i++;
-            if((long long)(i*i)+(j*j)>c) j--;
+            long long sum=(long long)(i*i)+(j*j);
+            if(sum==c) return true;
+            if(sum<c) i++;
+            if(sum>c) j--;
         }
         return false;
     }
