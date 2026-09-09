@@ -2,9 +2,27 @@ class Solution {
 public:
     long long countCommas(long long n){
         long long ans=0;
-       for(long long i=1000;i<=n;i*=1000){
-        ans+=n-i+1;
-       }
-       return ans;
+        long long a=n-999;
+
+        if(a>0)
+        ans+=a;
+
+        a=n-999999;
+        if(a>0)
+        ans+=a;
+      
+       a=n-999999999;
+        if(a>0)
+        ans+=a;
+
+         a=n-999999999999;
+        if(a>0)
+        ans+=a;
+
+         a=n-999999999999999;
+        if(a>0)
+        ans+=a;
+        
+        return ans;
         }
 };
